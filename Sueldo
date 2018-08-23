@@ -23,7 +23,7 @@ int main()
         else
         {
           if(sueldo>=1300)
-            sueldo=sueldo*.8+sueldo;
+            sueldo=sueldo*.08+sueldo;
           else
           cout<<"ERROR";
          }
