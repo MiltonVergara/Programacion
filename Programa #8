@@ -1,0 +1,33 @@
+/*8. Escriba un programa que acepte como entrada un número de cinco dígitos, lo separe en sus distintos dígitos y
+los imprima separándolos cada uno con tres espacios. (Sugerencia: emplee los operadores de división y de
+módulo) Por ejemplo, si el usuario tecla 42339, el programa deberá imprimir: 4 2 3 3 9*/
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+int main()
+{
+    int numero, a, b, c, d, e;
+    cout<<"ingresa un numero de 5 digitos: ";
+    cin>>numero;
+    if (numero >= 10000)
+    {
+		 if (numero <= 99999)
+		 {
+			 a = numero / 10000;
+			 b = (numero % 10000) / 1000;
+			 c = (numero % 10000) % 1000 / 100;
+			 d = ((numero % 10000) % 1000) % 100 / 10;
+			 e = (((numero % 10000) % 1000) % 100) % 10;
+ 
+			 cout<<a <<"   " <<b <<"   " <<c <<"   " <<d <<"   " <<e;
+		 }
+	}
+
+    return 0;
+}
+
+
+
+
