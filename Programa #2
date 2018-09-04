@@ -1,0 +1,20 @@
+#include <iostream>
+
+using namespace std;
+
+int main ()
+{
+    int base,potencia,ans;
+    cout << "Por favor ingrese la base" <<endl;
+    cin >> base;
+    cout << "Por favor ingrese la potencia" <<endl;
+    cin >> potencia;
+    ans=1;
+    for (int i=1 ; i<=potencia; i++)
+    {
+        ans=ans*base;
+    }
+    cout << "El resultado es " <<ans<<endl;
+  
+  return 0;
+}
