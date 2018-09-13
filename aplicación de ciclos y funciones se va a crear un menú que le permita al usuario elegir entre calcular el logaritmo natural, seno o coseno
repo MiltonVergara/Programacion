@@ -3,10 +3,10 @@
 
 using namespace std;
 
-float logaritmo (int a, int b);
-float seno (int a, int b);
-float coseno (int a, int b);
-int potencia(int base, int expo);
+float logaritmo (float a, int b);
+float seno (float a, int b);
+float coseno (float a, int b);
+float potencia(float base, int expo);
 int factorial(int n);
 
 int main(){
@@ -23,21 +23,21 @@ int main(){
             cin>>x;
             cout<<endl <<"ingresa el tamaño: ";
             cin>>tamano;
-            cout<<logaritmo(x, tamano);
+            cout<<logaritmo(x*.0175, tamano);
         }else{
             if(opcion == 2){
                 cout<<"ingresa el valor de x: ";
                 cin>>x;
                 cout<<endl <<"ingresa el tamaño: ";
                 cin>>tamano;
-                cout<<seno(x, tamano);
+                cout<<seno(x*.0175, tamano);
             }else{
                 if(opcion == 3){
                     cout<<"ingresa el valor de x: ";
                     cin>>x;
                     cout<<endl <<"ingresa el tamaño: ";
                     cin>>tamano;
-                    cout<<coseno(x, tamano); 
+                    cout<<coseno(x*.0175, tamano); 
                 }
             }
         }
@@ -55,36 +55,39 @@ int main(){
 
 
 
-float logaritmo (int a, int b){
+float logaritmo (float a, int b){
     float sum=0;
     for(int i=1;i<=b;i++){
-        sum+=1/i*potencia((a-1)/a,i);
+        sum+=1.0/i*potencia((a-1.0)/a,i);
     }
     return sum;
 }
-float coseno (int a, int b){
+float coseno (float a, int b){
     float cos;
     int den;
     int sig=1;
     for (int i=1;i<=b;i++,den+=2){
-        cos += potencia(a, den)/factorial(den)*sig;
+        cos += (float) potencia(a, den)/factorial(den)*sig;
         sig*=-1;
     }
     return cos;
     
 }
 
-float seno (int a, int b){
+float seno (float a, int b){
     float seno;
-    for (int i=1;i<=b;i++){
-        seno += potencia(-1, i)* potencia(a, 2*i+1)/factorial(2*i+1);
+    ov=1;
+    int sig=1;
+    for (int i=1;i<=b;i++,ov+=2){
+        seno += (float) potencia((float)a,ov)/factorial(ov)*sig;
+        sig*=-1;
     }
     return seno;
 }
 
-int potencia(int base, int expo)
+float potencia(float base, int expo)
 {
-    int pot=1;
+    float pot=1;
     for(int i=1;i<=expo;i++)
     {
         pot*=base;
