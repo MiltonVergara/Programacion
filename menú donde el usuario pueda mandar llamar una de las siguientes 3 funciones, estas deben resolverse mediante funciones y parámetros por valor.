@@ -1,0 +1,79 @@
+#include <math.h>
+#include <iostream>
+
+using namespace std;
+float funcion1(int x);
+float funcion2(int a, int b);
+float funcion3(int x);
+
+int main()
+{
+    
+    int x, s, o, y, u;
+    cout<<"funcion 1, 2 o 3?: ";
+    cin>>o;
+    if(o==1)
+    {
+        cout<<"ingresa limite inferior y superior: ";
+        cin>>x >>s;
+        for(int i=1;i<=s;i++,x++)
+        {
+            cout<<x <<" " <<funcion3(x) <<endl;
+        }
+        
+    }
+    else{
+        if(o==2)
+        {
+            cout<<"ingresa y: ";
+            cin>>y;
+            cout<<"ingresa x: ";
+            cin>>u;
+            
+            cout<<endl <<funcion2(u,y);
+            
+        }
+        else
+        {
+            cout<<"ingresa limite inferior y superior: ";
+            cin>>x >>s;
+            for(int i=1;i<=s;i++,x++)
+            {
+                cout<<x <<" " <<funcion3(x) <<endl;
+            }
+        }
+    }
+  
+
+    return 0;
+}
+
+float funcion1(int x)
+{
+    float s=0;
+    s=float(2*pow(x,2/3)/(2*x-3));
+
+    return s;
+}
+
+float funcion2(int a, int b)
+{
+    float s=0;
+    s=float(2*a*b)-3*b;
+    return s;
+}
+
+float funcion3(int x)
+{
+    float m=0;
+    if(x<0)
+    {
+        m=(((3*pow(x,2))/(2*x))+(6*x))*1.00;
+    
+    }
+    else
+    {
+       m=(((6*pow(x,3))-(3*x))/(2*pow(x,2))-3)*1.0;
+    }
+    return m;
+}
