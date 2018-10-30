@@ -1,0 +1,56 @@
+#include <iostream>
+
+using namespace std;
+int horaasegundo(int h, int m, int s);
+void segundosahora(int seg);
+void imprimir(int h, int s, int m);
+
+int main()
+{
+    int op, h, m, s, seg;
+    cout<<"1-convertir horas a segundos"<<endl;
+    cout<<"2-convertir segundos a horas"<<endl;
+    cin>>op;
+    if (op==1)
+    {
+        cout<<"ingresa las horas: ";
+        cin>>h;
+        cout<<"ingresa los minutos: ";
+        cin>>m;
+        cout<<"ingresa los segundos: ";
+        cin>>s;
+        cout<<horaasegundo(h,m,s);
+    }
+    else
+    {
+        cout<<"ingresa los segundos: ";
+        cin>>seg;
+        segundosahora(seg);
+    }
+    return 0;
+}
+int horaasegundo(int h, int m, int s)
+{
+    int seg=0;
+    h*=3600;
+    m*=60;
+    seg=h+m+s;
+    return seg;
+}
+void segundosahora(int seg)
+{
+    int h, m, s;
+    h=seg/3600;
+    m=(seg-h*3600)/60;
+    s=seg-(h*3600+m*60);
+    
+    imprimir(h,m,s);
+}
+void imprimir(int h, int s, int m)
+{
+    cout<<h <<" horas " <<s <<" minutos " <<m <<" segundos";
+}
+
+
+
+
